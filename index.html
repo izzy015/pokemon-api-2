@@ -1,0 +1,146 @@
+<!-- index.html --><!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokémon Selector</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <h1 class="brand">Pokémon Selector</h1>
+      <div class="nav-actions">
+        <a class="btn ghost" href="#app">Open App</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h2>Find any Pokémon instantly</h2>
+        <p class="lead">Search by name or ID, view stats, abilities, moves and save your favourites. Powered by the PokéAPI.</p>
+        <p>
+          <a href="#app" class="btn">Try the App</a>
+          <a href="#features" class="btn ghost">Learn More</a>
+        </p>
+      </div>
+      <div class="hero-art">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="Pikachu official artwork" />
+      </div>
+    </div>
+  </header>
+
+  <section id="features" class="features">
+    <div class="feature-grid">
+      <div class="feature">
+        <h3>Fast search</h3>
+        <p>Auto-complete and quick lookup for all Pokémon names and IDs.</p>
+      </div>
+      <div class="feature">
+        <h3>Favorites</h3>
+        <p>Save frequently viewed Pokémon locally for quick access.</p>
+      </div>
+      <div class="feature">
+        <h3>Mobile friendly</h3>
+        <p>Responsive layout for phones and tablets so you can browse on the go.</p>
+      </div>
+    </div>
+  </section>
+
+  <main id="app" class="app">
+    <!-- existing app markup (preserved) -->
+    <header>
+      <h1>Pokémon Selector</h1>
+      <div class="controls">
+        <input id="search" list="poke-list" placeholder="Search Pokémon by name or ID" />
+        <datalist id="poke-list"></datalist>
+        <button id="searchBtn">Search</button>
+        <button id="randomBtn">Random</button>
+        <select id="generation">
+          <option value="all">All Generations</option>
+          <option value="1">Gen 1</option>
+          <option value="2">Gen 2</option>
+          <option value="3">Gen 3</option>
+        </select>
+      </div>
+    </header>
+    <div class="main">
+      <div class="card">
+        <div class="sprite-wrap" id="spriteWrap">
+          <div class="center muted">Search for a Pokémon to see details</div>
+        </div>
+        <div class="meta">
+          <div class="name" id="pokeName">—</div>
+          <div class="id" id="pokeId">#—</div>
+        </div>
+        <div class="badges" id="typeBadges"></div>
+        <div class="section">
+          <div class="section-title">Abilities</div>
+          <div class="abilities" id="abilities"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="details">
+          <div class="section">
+            <div class="section-title">Base Stats</div>
+            <div class="stats" id="stats"></div>
+          </div>
+          <div class="section">
+            <div class="section-title">Top Moves</div>
+            <div class="moves" id="moves"></div>
+          </div>
+          <div class="section">
+            <div class="section-title">Pokédex Entry</div>
+            <div id="detailsArea">No Pokémon selected.</div>
+          </div>
+        </div>
+        <div class="footer">
+          <button id="prevBtn">Prev</button>
+          <button id="nextBtn">Next</button>
+          <div class="muted">Quick filters:</div>
+          <button class="filter" data-type="fire">Fire</button>
+          <button class="filter" data-type="water">Water</button>
+          <button class="filter" data-type="grass">Grass</button>
+        </div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:16px">
+      <div class="section-title">Favorites</div>
+      <div id="favorites"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>About</h4>
+          <p>Pokémon Selector lets you explore the world of Pokémon using the PokéAPI. Search, browse, and save your favorites.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Links</h4>
+          <ul>
+            <li><a href="https://pokeapi.co" target="_blank" rel="noopener">PokéAPI</a></li>
+            <li><a href="#app">Open App</a></li>
+            <li><a href="#features">Features</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Filters</h4>
+          <div class="footer-filters">
+            <button class="filter" data-type="electric">Electric</button>
+            <button class="filter" data-type="dragon">Dragon</button>
+            <button class="filter" data-type="psychic">Psychic</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Data provided by <a href="https://pokeapi.co" target="_blank" rel="noopener">PokéAPI</a>. Pokémon and Pokémon character names are trademarks of Nintendo.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
