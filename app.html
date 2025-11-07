@@ -1,9 +1,9 @@
-<!-- index.html --><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pokémon Selector</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -13,90 +13,22 @@
           <img src="./assets/ball.png" alt="" />
           <h1 class="brand">PokéChoice</h1>
         </div>
-
         <div class="nav-bar">
-           <ul>
+          <ul>
            <li> <a href="./index.html">Home</a></li>
-            <li><a href="">Features</a></li>
+            <li><a href="#features">Features</a></li>
            <li> <a href="">About</a></li>
           </ul>
-
         </div>
 
         <div class="nav-actions">
-          <a class="btn ghost" href="./app.html">Open App</a>
+          <!-- <a class="btn ghost" href="./app.html">Open App</a> -->
         </div>
       </div>
     </nav>
 
-    <header class="hero">
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <h2>Find any Pokémon instantly</h2>
-          <p class="lead">
-             Pokéchoice is website that  Search  Pokémons by name or ID, view stats, abilities, moves and save your
-            favourites. Powered by the PokéAPI.
-          </p>
-          <p>
-            <a href="#app" class="btn">Try the App</a>
-            <a href="./app.html" class="btn ghost">Learn More</a>
-          </p>
-        </div>
-        <div class="hero-art">
-          <img
-            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
-            alt="Pikachu official artwork"
-          />
-        </div>
-      </div>
-    </header>
-
-    <section id="features" class="features">
-      <h2>Features</h2>
-      <div class="feature-grid">
-        <div class="feature">
-          <img src="./assets/wired-outline-19-magnifier-zoom-search-morph-check (1).apng" alt="loading">
-          <h3>Fast search</h3>
-          <p>Auto-complete and quick lookup for all Pokémon names and IDs.</p>
-        </div>
-        <div class="feature">
-          <img src="./assets/wired-outline-237-star-rating-hover-pinch.apng" alt="">
-          <h3>Favorites</h3>
-          <p>Save frequently viewed Pokémon locally for quick access.</p>
-        </div>
-        <div class="feature">
-          <img src="./assets/wired-outline-2803-engagement-alt-hover-pinch.apng" alt="">
-          <h3>Mobile friendly</h3>
-          <p>
-            Responsive layout for phones and tablets so you can browse on the
-            go.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="info-pane">
-      <h2>How PokéChoice works</h2>
-      <div class="info-grid">
-        <div class="info">
-          <img src="./assets/wired-outline-19-magnifier-zoom-search-hover-spin (1).apng" alt="">
-          <h3>Search Pokémon</h3>
-          <p>Quickly find any pokemon by name or id in seconds</p>
-        </div>
-        <div class="info">
-          <img src="./assets/wired-outline-19-magnifier-zoom-search-in-reveal.apng" alt="">
-          <h3>View details</h3>
-          <p>See stats, abilities, moves and pokédex entries</p>
-        </div>
-        <div class="info">
-          <img src="./assets/wired-outline-400-bookmark-morph-checked.apng" alt="">
-          <h3>Save favorites</h3>
-          <p>Keep a list of your favorite Pokémon for easy access</p>
-      </div>
-    </section>
-
-    <!-- <main id="app" class="app">
-      
+    <main id="app" class="app">
+      <!-- existing app markup (preserved) -->
       <header>
         <h1>Pokémon Selector</h1>
         <div class="controls">
@@ -150,9 +82,9 @@
             <button id="prevBtn">Prev</button>
             <button id="nextBtn">Next</button>
             <div class="muted">Quick filters:</div>
-            <button class="filter" data-type="fire">Fire</button>
-            <button class="filter" data-type="water">Water</button>
-            <button class="filter" data-type="grass">Grass</button>
+            <button class="filter1" data-type="fire">Fire</button>
+            <button class="filter2" data-type="water">Water</button>
+            <button class="filter3" data-type="grass">Grass</button>
           </div>
         </div>
       </div>
@@ -160,7 +92,7 @@
         <div class="section-title">Favorites</div>
         <div id="favorites"></div>
       </div>
-    </main> -->
+    </main>
 
     <footer class="site-footer">
       <div class="footer-inner">
@@ -168,7 +100,7 @@
           <div class="footer-section">
             <h4>About</h4>
             <p>
-              PokéChioce Selector lets you explore the world of Pokémon using the
+              PokéChoice Selector lets you explore the world of Pokémon using the
               PokéAPI. Search, browse, and save your favorites.
             </p>
           </div>
@@ -180,29 +112,18 @@
                   >PokéAPI</a
                 >
               </li>
-              <li><a href="./app.html">Open App</a></li>
+              <li><a href="#app">Open App</a></li>
               <li><a href="#features">Features</a></li>
+              <li><a href="./index.html">Home</a></li>
             </ul>
           </div>
           <div class="footer-section">
-            <h4>Follows us</h4>
-            <div class="footer-icons">
-              <a href="#" class="footer-icon"
-                ><img src="./assets/facebook-logo-button.png" alt="Facebook"
-              /></a>
-              <a href="#" class="footer-icon"
-                ><img src="./assets/twitter-logo-button.png" alt="Twitter"
-              /></a>
-              <a href="#" class="footer-icon"
-                ><img src="./assets/instagram-logo-button.png" alt="Instagram"
-              /></a>
-            </div>
-            <!-- <h4>Quick Filters</h4>
+            <h4>Quick Filters</h4>
             <div class="footer-filters">
               <button class="filter" data-type="electric">Electric</button>
               <button class="filter" data-type="dragon">Dragon</button>
               <button class="filter" data-type="psychic">Psychic</button>
-            </div> -->
+            </div>
           </div>
         </div>
         <div class="footer-bottom">
