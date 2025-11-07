@@ -306,7 +306,7 @@ body {
   align-items: center;
   margin: 40px auto;
   box-sizing: border-box;
-  overflow: visible;
+  overflow: hidden;  
 }
 
 header {
@@ -664,6 +664,7 @@ header h1 {
 @media (max-width: 820px) {
   body {
     padding: 20px 20px 0;
+    width: 100%;
   }
   .nav-inner {
     gap: 30px;
@@ -731,9 +732,11 @@ header h1 {
   }
   .app {
     padding: 15px;
+    width: 100%;
   }
   .card {
     padding: 14px;
+    width: 90%;
   }
   .sprite-wrap {
     height: 180px;
