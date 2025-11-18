@@ -1,22 +1,5 @@
 
-const elements = {
-  search: document.getElementById('search'),
-  searchBtn: document.getElementById('searchBtn'),
-  randomBtn: document.getElementById('randomBtn'),
-  generation: document.getElementById('generation'),
-  datalist: document.getElementById('poke-list'),
-  spriteWrap: document.getElementById('spriteWrap'),
-  pokeName: document.getElementById('pokeName'),
-  pokeId: document.getElementById('pokeId'),
-  typeBadges: document.getElementById('typeBadges'),
-  abilities: document.getElementById('abilities'),
-  stats: document.getElementById('stats'),
-  moves: document.getElementById('moves'),
-  detailsArea: document.getElementById('detailsArea'),
-  prevBtn: document.getElementById('prevBtn'),
-  nextBtn: document.getElementById('nextBtn'),
-  favorites: document.getElementById('favorites'),
-};
+let elements = null; // will be populated after DOM checks
 
 const cache = new Map();
 const speciesCache = new Map();
@@ -25,6 +8,30 @@ window.requestCount = 0; // expose request count for debugging
 let currentPokemonId = null;
 let allPokemon = null;
 
+// If the page doesn't include the app DOM (e.g. index.html), skip binding the
+// app-specific event listeners to avoid "cannot read property 'addEventListener' of null" errors.
+if (!document.getElementById('search')) {
+  console.warn('app.js: app DOM not found — skipping app initialization');
+} else {
+  // populate elements now that we know the app DOM exists
+  elements = {
+    search: document.getElementById('search'),
+    searchBtn: document.getElementById('searchBtn'),
+    randomBtn: document.getElementById('randomBtn'),
+    generation: document.getElementById('generation'),
+    datalist: document.getElementById('poke-list'),
+    spriteWrap: document.getElementById('spriteWrap'),
+    pokeName: document.getElementById('pokeName'),
+    pokeId: document.getElementById('pokeId'),
+    typeBadges: document.getElementById('typeBadges'),
+    abilities: document.getElementById('abilities'),
+    stats: document.getElementById('stats'),
+    moves: document.getElementById('moves'),
+    detailsArea: document.getElementById('detailsArea'),
+    prevBtn: document.getElementById('prevBtn'),
+    nextBtn: document.getElementById('nextBtn'),
+    favorites: document.getElementById('favorites'),
+  };
 // --- Favorites ---
 function loadFavorites() {
   try {
@@ -246,11 +253,15 @@ function renderPokemon(data) {
       : '♡ Favorite';
   });
   const ftr = document.querySelector('.footer');
-  const existing = ftr.querySelector('.fav-btn');
-  if (existing) existing.remove();
-  favBtn.className = 'fav-btn';
-  favBtn.style.marginLeft = '8px';
-  ftr.insertBefore(favBtn, ftr.children[2]);
+  if (ftr) {
+    const existing = ftr.querySelector('.fav-btn');
+    if (existing) existing.remove();
+    favBtn.className = 'fav-btn';
+    favBtn.style.marginLeft = '8px';
+    // insert before the third child if present, otherwise append
+    if (ftr.children.length >= 3) ftr.insertBefore(favBtn, ftr.children[2]);
+    else ftr.appendChild(favBtn);
+  }
 }
 
 function capitalize(s) {
@@ -383,3 +394,5 @@ elements.generation.addEventListener('change', () => {
   renderFavorites();
   loadAllPokemon().catch(() => {});
 })();
+
+} // end app DOM guard
